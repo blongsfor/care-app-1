@@ -1,19 +1,25 @@
 import dbConnect from "../../../../lib/dbConnect";
-import Entry from "../../../../lib/models/entry";
+import mongoose from "mongoose";
 
-export default async function handler(req, res) {
-  await dbConnect();
+export default async (req, res) => {
+  try {
+    await dbConnect(); // Connect to the database
 
-  if (req.method === "GET") {
-    try {
-      const entries = await Entry.find().lean();
+    const entriesCollection = mongoose.connection.db.collection("entries");
 
+    if (req.method === "GET") {
+      const { clientID } = req.query;
+      const query = clientID ? { clientID } : {};
+      const entries = await entriesCollection.find(query).toArray();
       res.status(200).json(entries);
-    } catch (error) {
-      console.error("Error fetching entries:", error);
-      res.status(500).json({ error: "Failed to fetch entries" });
+    } else if (req.method === "POST") {
+      const newEntry = req.body;
+      const result = await entriesCollection.insertOne(newEntry);
+      res.status(201).json(result);
+    } else {
+      res.status(405).json({ message: "Method not allowed" });
     }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
+  } catch (e) {
+    res.status(500).json({ message: e.message });
   }
-}
+};
