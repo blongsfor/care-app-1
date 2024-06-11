@@ -16,4 +16,15 @@ export default async function handler(req, res) {
   } else {
     res.status(405).json({ error: "Method not allowed" });
   }
+
+  if (req.method === "POST") {
+    try {
+      const newEntry = req.body;
+      await Entry.create(newEntry);
+      response.status(200).json({ status: "new entry created" });
+    } catch (error) {
+      console.error("Error creating entry:", error);
+      res.status(404).json({ error: "Failed to create entry" });
+    }
+  }
 }

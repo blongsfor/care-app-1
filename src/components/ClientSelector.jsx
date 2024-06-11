@@ -25,16 +25,16 @@ export default function ClientSelector() {
   return (
     <>
       <div>
-        <label htmlFor="title">Client</label>
+        <label htmlFor="client">Client</label>
         <select
-          id="title"
-          name="title"
+          id="client"
+          name="client"
           value={selectedClient}
           onChange={handleClientChange}
         >
-          <option value="">Select Title</option>
+          <option value="">Select Client</option>
           {clients?.map((client) => (
-            <option key={client.id} value={client.lastName}>
+            <option key={client.id} value={client.id}>
               {client.firstName} {client.lastName}
             </option>
           ))}
