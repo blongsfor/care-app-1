@@ -1,9 +1,11 @@
+import React from "react";
+
 export default function EntryList({ entries }) {
   return (
     <>
       <ul>
-        {entries.map((entry) => {
-          return (
+        {entries.length > 0 ? (
+          entries.map((entry) => (
             <li key={entry._id}>
               <h2>{entry.client}</h2>
               {entry.documentation?.length > 0 ? (
@@ -26,8 +28,10 @@ export default function EntryList({ entries }) {
                 <p>No documentation available</p>
               )}
             </li>
-          );
-        })}
+          ))
+        ) : (
+          <p>No entries available</p>
+        )}
       </ul>
     </>
   );

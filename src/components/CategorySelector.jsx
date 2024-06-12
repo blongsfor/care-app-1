@@ -27,14 +27,14 @@ export default function Categoryelector() {
   return (
     <>
       <div>
-        <label htmlFor="title">Task</label>
+        <label htmlFor="task">Task</label>
         <select
-          id="title"
-          name="title"
+          id="task"
+          name="task"
           value={selectedTitle}
           onChange={handleTitleChange}
         >
-          <option value="">Select Title</option>
+          <option value="">Select Task</option>
           {tasks?.map((task) => (
             <option key={task.id} value={task.task}>
               {task.task}

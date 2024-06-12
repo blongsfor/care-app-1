@@ -1,4 +1,3 @@
-// entries.js
 import useSWR from "swr";
 import EntryList from "../components/EntryList";
 import BackButton from "@/components/BackButton";
@@ -10,6 +9,8 @@ export default function Entries() {
 
   if (error) return <div>Failed to load entries</div>;
   if (!data) return <div>Loading...</div>;
+
+  console.log("here should be data somehow:", data);
 
   return (
     <>

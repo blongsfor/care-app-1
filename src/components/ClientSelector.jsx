@@ -23,23 +23,32 @@ export default function ClientSelector() {
   };
 
   return (
-    <>
-      <div>
-        <label htmlFor="title">Client</label>
-        <select
-          id="title"
-          name="title"
-          value={selectedClient}
-          onChange={handleClientChange}
-        >
-          <option value="">Select Title</option>
-          {clients?.map((client) => (
-            <option key={client.id} value={client.lastName}>
-              {client.firstName} {client.lastName}
-            </option>
-          ))}
-        </select>
-      </div>
-    </>
+    <div>
+      <label htmlFor="client">Client</label>
+      <select
+        id="client"
+        name="clientID"
+        value={selectedClient}
+        onChange={handleClientChange}
+        required
+      >
+        <option value="">Select Client</option>
+        {clients?.map((client) => (
+          <option key={client._id} value={client._id}>
+            {client.firstName} {client.lastName}
+          </option>
+        ))}
+      </select>
+      <input
+        type="hidden"
+        name="clientName"
+        value={
+          clients.find((client) => client._id === selectedClient)?.firstName +
+            " " +
+            clients.find((client) => client._id === selectedClient)?.lastName ||
+          ""
+        }
+      />
+    </div>
   );
 }
