@@ -99,14 +99,9 @@ export default function DocumentationForm() {
       <h2>Create Documentation Entry</h2>
       <form onSubmit={handleSubmit}>
         <DateTimePickerStart />
-        {/* <DateTimePickerEnd /> */}
+        <DateTimePickerEnd />
         <CategorySelector />
         <ClientSelector />
-
-        {/* <div>
-          <label htmlFor="task">Task</label>
-          <input type="text" id="task" name="task" required />
-        </div> */}
 
         <div>
           <label htmlFor="documentation">Documentation</label>
