@@ -1,4 +1,3 @@
-// entries.js
 import useSWR from "swr";
 import EntryList from "../components/EntryList";
 import BackButton from "@/components/BackButton";

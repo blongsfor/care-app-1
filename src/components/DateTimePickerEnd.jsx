@@ -3,7 +3,7 @@ export default function DateTimePickerEnd() {
 
   return (
     <>
-      <label htmlFor="meeting-end">End:</label>
+      <label htmlFor="meeting-end">End: </label>
       <input
         type="datetime-local"
         id="meeting-end"
