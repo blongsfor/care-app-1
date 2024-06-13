@@ -14,7 +14,6 @@ export default function Homepage() {
   return (
     <div>
       <LogoutButton />
-      <EntriesButton />
       <h2>Client List</h2>
       <ClientList clients={data} />
     </div>
