@@ -6,7 +6,6 @@ export default function DocumentationFormPage() {
   return (
     <>
       <DocumentationForm />
-      <BackButton />
     </>
   );
 }

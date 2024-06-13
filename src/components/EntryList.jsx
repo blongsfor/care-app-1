@@ -19,6 +19,7 @@ export default function EntryList({ entries }) {
       <ul>
         {entries.length > 0 ? (
           entries.map((entry) => (
+
             <li key={entry.clientID}>
               <h2>{entry.client}</h2>
               {entry.documentation?.length > 0 ? (
@@ -54,6 +55,7 @@ export default function EntryList({ entries }) {
               ) : (
                 <p>No documentation available</p>
               )}
+
             </li>
           ))
         ) : (

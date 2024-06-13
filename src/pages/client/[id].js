@@ -19,11 +19,8 @@ export default function ClientDetails() {
   return (
     <>
       <LogoutButton />
-      <EntriesButton />
-      <BackButton />
       <Client {...data} />
       <DocumentButton />
-      <BackButton />
     </>
   );
 }

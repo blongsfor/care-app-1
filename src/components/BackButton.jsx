@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import { ChevronLeft } from "lucide-react";
 
 export default function BackButton() {
   const router = useRouter();
@@ -8,5 +9,9 @@ export default function BackButton() {
     router.back();
   };
 
-  return <button onClick={handleBack}>Go Back</button>;
+  return (
+    <button onClick={handleBack}>
+      <ChevronLeft />
+    </button>
+  );
 }
