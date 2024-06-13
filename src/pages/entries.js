@@ -15,13 +15,11 @@ export default function Entries() {
   return (
     <>
       <LogoutButton />
-      <BackButton />
       <DocumentButton />
       <div>
         <h2>Entries</h2>
         <EntryList entries={data} />
       </div>
-      <BackButton />
     </>
   );
 }

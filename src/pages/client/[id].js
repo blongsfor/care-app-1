@@ -20,10 +20,8 @@ export default function ClientDetails() {
     <>
       <LogoutButton />
       <EntriesButton />
-      <BackButton />
       <Client {...data} />
       <DocumentButton />
-      <BackButton />
     </>
   );
 }
