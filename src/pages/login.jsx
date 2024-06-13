@@ -7,15 +7,15 @@ export default function login() {
   const router = useRouter();
   const { data: session } = useSession();
 
-  useEffect(() => {
-    if (session) {
-      router.replace("/clientlist");
-    }
-  }, [session, router]);
+  // useEffect(() => {
+  //   if (session) {
+  //     router.replace("/clientlist");
+  //   }
+  // }, [session, router]);
 
   const handleLogin = () => {
     signIn("credentials", {
-      callbackUrl: "/clientlist",
+      callbackUrl: "/",
     });
   };
 
@@ -39,20 +39,3 @@ export default function login() {
     </div>
   );
 }
-//   if (session) {
-//     return (
-//       <>
-//         <p>Signed in as {session.user.name}</p>
-//         <img src={session.user.image} alt="Userimage" />
-//         <br />
-//         <button onClick={() => signOut()}>Sign out</button>
-//       </>
-//     );
-//   }
-//   return (
-//     <>
-//       Not signed in <br />
-//       <button onClick={() => signIn()}>Sign in</button>
-//     </>
-//   );
-// }
