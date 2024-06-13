@@ -37,10 +37,8 @@ export default function DocumentationForm() {
       mutate();
       router.push("/entries");
     } else {
-      // const errorData = await response.json();
       console.error("Failed to submit entry:", response);
     }
-    // router.reload();
   }
 
   return (
