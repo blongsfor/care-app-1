@@ -9,15 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hilla/react-components": "^2.3.13",
-    "@polymer/polymer": "^3.5.1",
     "dayjs": "^1.11.11",
     "lucide-react": "^0.394.0",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
     "next-cloudinary": "^6.6.2",
-    "polymer-cli": "^1.9.11",
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^6.23.1",

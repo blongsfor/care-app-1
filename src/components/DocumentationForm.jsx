@@ -4,9 +4,11 @@ import DateTimePickerStart from "./DateTimePickerStart";
 import DateTimePickerEnd from "./DateTimePickerEnd";
 import CategorySelector from "./CategorySelector";
 import ClientSelector from "./ClientSelector";
+import { useRouter } from "next/router";
 
 export default function DocumentationForm() {
   const { mutate } = useSWR("/api/entries");
+  const router = useRouter();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -16,7 +18,8 @@ export default function DocumentationForm() {
       clientID: formData.get("clientID"),
       client: formData.get("clientName"),
       documentation: {
-        datetime: formData.get("meeting-start"),
+        datetimestart: formData.get("meeting-start"),
+        datetimeend: formData.get("meeting-end"),
         task: formData.get("task"),
         details: formData.get("documentation"),
       },
@@ -32,9 +35,9 @@ export default function DocumentationForm() {
 
     if (response.ok) {
       mutate();
+      router.push("/entries");
     } else {
-      const errorData = await response.json();
-      console.error("Failed to submit entry:", errorData);
+      console.error("Failed to submit entry:", response);
     }
   }
 

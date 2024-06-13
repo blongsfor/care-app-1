@@ -15,10 +15,7 @@ export default async function handler(req, res) {
       console.error("Error fetching entries:", error);
       res.status(500).json({ error: "Failed to fetch entries" });
     }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
   }
-
   if (req.method === "POST") {
     try {
       const { client, documentation, clientID } = req.body;
@@ -39,6 +36,13 @@ export default async function handler(req, res) {
     } catch (error) {
       console.error("Error creating/updating entry:", error);
       res.status(500).json({ error: "Failed to create/update entry" });
+    }
+    if (request.method === "PUT") {
+      await Entry.findByIdAndUpdate(id, {
+        $set: request.body,
+      });
+
+      response.status(200).json({ status: `Entry ${id} updated!` });
     }
   } else {
     res.status(405).json({ error: "Method not allowed" });
