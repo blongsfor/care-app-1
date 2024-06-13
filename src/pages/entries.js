@@ -3,6 +3,7 @@ import EntryList from "../components/EntryList";
 import BackButton from "@/components/BackButton";
 import LogoutButton from "@/components/LogoutButton";
 import DocumentButton from "@/components/DocumentButton";
+import Navbar from "../components/Navbar";
 
 export default function Entries() {
   const { data, error } = useSWR("/api/entries");
@@ -14,6 +15,7 @@ export default function Entries() {
 
   return (
     <>
+      <Navbar />
       <LogoutButton />
       <DocumentButton />
       <div>

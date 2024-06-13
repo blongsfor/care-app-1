@@ -1,7 +1,15 @@
 import { getSession } from "next-auth/react";
+import Navbar from "../components/Navbar";
+import LogoutButton from "../components/LogoutButton";
 
 export default function Home() {
-  return <h2>DASHBOARD</h2>;
+  return (
+    <>
+      <Navbar />
+      <LogoutButton />
+      <h2>DASHBOARD</h2>
+    </>
+  );
 }
 
 export async function getServerSideProps(context) {
@@ -16,10 +24,7 @@ export async function getServerSideProps(context) {
     };
   } else {
     return {
-      redirect: {
-        destination: "/clientlist",
-        permanent: false,
-      },
+      props: { session },
     };
   }
 }
