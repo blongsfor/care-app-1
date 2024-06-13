@@ -3,6 +3,17 @@ import EditEntryButton from "./EditEntryButton";
 import DeleteEntryButton from "./DeleteEntryButton";
 
 export default function EntryList({ entries }) {
+  function formatDateTime(dateTimeString) {
+    const date = new Date(dateTimeString);
+    return date.toLocaleString("default", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false, // Use 24-hour format
+    });
+  }
   return (
     <>
       <ul>
@@ -15,10 +26,12 @@ export default function EntryList({ entries }) {
                   {entry.documentation.map((doc, index) => (
                     <li key={index}>
                       <p>
-                        <strong>Start Time:</strong> {doc.datetimestart}
+                        <strong>Start Time:</strong>{" "}
+                        {formatDateTime(doc.datetimestart)}
                       </p>
                       <p>
-                        <strong>End Time:</strong> {doc.datetimeend}
+                        <strong>End Time:</strong>{" "}
+                        {formatDateTime(doc.datetimeend)}
                       </p>
                       <p>
                         <strong>Task:</strong> {doc.task}

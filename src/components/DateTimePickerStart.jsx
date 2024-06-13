@@ -17,7 +17,7 @@ export default function DateTimePickerStart() {
         type="datetime-local"
         id="meeting-start"
         name="meeting-start"
-        defaultValue={currentDateTime} // Set the default value to display current date and time adjusted for timezone
+        defaultValue={currentDateTime}
       />
     </div>
   );
