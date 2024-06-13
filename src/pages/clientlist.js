@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import EntriesButton from "@/components/EntriesButton";
 
 export default function Homepage() {
-  const { data, error } = useSWR("/api/clients");
+  const { data, error } = useSWR("/api/clients", fetcher);
 
   if (error) return <div>Failed to load clients</div>;
   if (!data) return <div>Loading...</div>;
