@@ -14,48 +14,51 @@ export default function EntryList({ entries }) {
       hour12: false, // Use 24-hour format
     });
   }
+
   return (
     <>
       <ul>
         {entries.length > 0 ? (
           entries.map((entry) => (
-
-            <li key={entry.clientID}>
-              <h2>{entry.client}</h2>
-              {entry.documentation?.length > 0 ? (
-                <ul>
-                  {entry.documentation.map((doc, index) => (
-                    <li key={index}>
-                      <p>
-                        <strong>Start Time:</strong>{" "}
-                        {formatDateTime(doc.datetimestart)}
-                      </p>
-                      <p>
-                        <strong>End Time:</strong>{" "}
-                        {formatDateTime(doc.datetimeend)}
-                      </p>
-                      <p>
-                        <strong>Task:</strong> {doc.task}
-                      </p>
-                      <p>
-                        <strong>Details:</strong> {doc.details}
-                      </p>
-                      <EditEntryButton
-                        clientID={entry.clientID} // the props we need in the EditEntryButton to make it work for the specific entry
-                        docIndex={index} // the specific index from the created documentationentry
-                        doc={doc} // the documentationentry from the maped entries
-                      />
-                      <DeleteEntryButton
-                        clientID={entry.clientID}
-                        docIndex={index}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No documentation available</p>
-              )}
-
+            <li key={entry.clientID || entry._id}>
+              <details>
+                <summary>{entry.client}</summary>
+                {entry.documentation?.length > 0 ? (
+                  <ul>
+                    {entry.documentation.map((doc, index) => (
+                      <li key={index}>
+                        <p>
+                          <strong>Date and Time:</strong>{" "}
+                          {formatDateTime(doc.datetimestart || doc.datetime)}
+                        </p>
+                        {doc.datetimeend && (
+                          <p>
+                            <strong>End Time:</strong>{" "}
+                            {formatDateTime(doc.datetimeend)}
+                          </p>
+                        )}
+                        <p>
+                          <strong>Task:</strong> {doc.task}
+                        </p>
+                        <p>
+                          <strong>Details:</strong> {doc.details}
+                        </p>
+                        <EditEntryButton
+                          clientID={entry.clientID}
+                          docIndex={index}
+                          doc={doc}
+                        />
+                        <DeleteEntryButton
+                          clientID={entry.clientID}
+                          docIndex={index}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No documentation available</p>
+                )}
+              </details>
             </li>
           ))
         ) : (
