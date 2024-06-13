@@ -18,7 +18,8 @@ export default function DocumentationForm() {
       clientID: formData.get("clientID"),
       client: formData.get("clientName"),
       documentation: {
-        datetime: formData.get("meeting-start"),
+        datetimestart: formData.get("meeting-start"),
+        datetimeend: formData.get("meeting-end"),
         task: formData.get("task"),
         details: formData.get("documentation"),
       },
@@ -34,12 +35,12 @@ export default function DocumentationForm() {
 
     if (response.ok) {
       mutate();
+      router.push("/entries");
     } else {
-      const errorData = await response.json();
-      console.error("Failed to submit entry:", errorData);
+      // const errorData = await response.json();
+      console.error("Failed to submit entry:", response);
     }
-    router.push("/entries");
-    router.reload();
+    // router.reload();
   }
 
   return (

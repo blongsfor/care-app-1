@@ -15,10 +15,7 @@ export default async function handler(req, res) {
       console.error("Error fetching entries:", error);
       res.status(500).json({ error: "Failed to fetch entries" });
     }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
   }
-
   if (req.method === "POST") {
     try {
       const { client, documentation, clientID } = req.body;

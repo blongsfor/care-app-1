@@ -13,7 +13,10 @@ export default function EntryList({ entries }) {
                   {entry.documentation.map((doc, index) => (
                     <li key={index}>
                       <p>
-                        <strong>Date and Time:</strong> {doc.datetime}
+                        <strong>Start Time</strong> {doc.datetimestart}
+                      </p>
+                      <p>
+                        <strong>End Time</strong> {doc.datetimeend}
                       </p>
                       <p>
                         <strong>Task:</strong> {doc.task}
