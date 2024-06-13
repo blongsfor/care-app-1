@@ -7,7 +7,12 @@ export default function ClientList({ clients }) {
       {clients.map((client) => (
         <li key={client._id}>
           <Link href={`/client/${client._id}`}>
-            <Image src={client.picture} width={200} height={200} />
+            <Image
+              src={client.picture}
+              width={200}
+              height={200}
+              alt={client.firstName}
+            />
             <h2>
               {client.firstName} {client.lastName}
             </h2>
