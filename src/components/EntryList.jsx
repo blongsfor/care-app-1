@@ -1,5 +1,6 @@
 import React from "react";
 import EditEntryButton from "./EditEntryButton";
+import DeleteEntryButton from "./DeleteEntryButton";
 
 export default function EntryList({ entries }) {
   return (
@@ -29,6 +30,10 @@ export default function EntryList({ entries }) {
                         clientID={entry.clientID} // the props we need in the EditEntryButton to make it work for the specific entry
                         docIndex={index} // the specific index from the created documentationentry
                         doc={doc} // the documentationentry from the maped entries
+                      />
+                      <DeleteEntryButton
+                        clientID={entry.clientID}
+                        docIndex={index}
                       />
                     </li>
                   ))}
