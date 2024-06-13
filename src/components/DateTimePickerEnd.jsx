@@ -1,6 +1,12 @@
 export default function DateTimePickerEnd() {
-  const date = new Date().toISOString().slice(0, 16);
+  const currentDate = new Date();
 
+  // Adjust for timezone offset
+  const timezoneOffset = currentDate.getTimezoneOffset();
+  currentDate.setMinutes(currentDate.getMinutes() - timezoneOffset);
+
+  // Format the current date and time in ISO 8601 format
+  const currentDateTime = currentDate.toISOString().slice(0, 16);
   return (
     <>
       <label htmlFor="meeting-end">End: </label>
@@ -8,7 +14,7 @@ export default function DateTimePickerEnd() {
         type="datetime-local"
         id="meeting-end"
         name="meeting-end"
-        defaultValue={date}
+        defaultValue={currentDateTime}
       />
     </>
   );
