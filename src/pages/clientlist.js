@@ -3,7 +3,6 @@ import React from "react";
 import ClientList from "../components/ClientList";
 import LogoutButton from "../components/LogoutButton";
 import Navbar from "../components/Navbar";
-import EntriesButton from "@/components/EntriesButton";
 
 export default function Homepage() {
   const { data, error } = useSWR("/api/clients");
