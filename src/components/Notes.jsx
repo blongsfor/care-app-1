@@ -55,6 +55,16 @@ export default function Notes() {
       console.error("Error toggling completion:", error);
     }
   };
+  const deleteCompletedNotes = async () => {
+    try {
+      const res = await fetch("/api/notes", {
+        method: "DELETE",
+      });
+      setNotes(notes.filter((note) => !note.completed));
+    } catch (error) {
+      console.error("Error deleting completed notes:", error);
+    }
+  };
 
   return (
     <div>
@@ -78,7 +88,7 @@ export default function Notes() {
               <li
                 key={note._id}
                 style={{
-                  textDecoration: note.completed ? "line-through" : "none",
+                  textDecoration: note.completed ? "line-through" : "none", //cross note if it is completed
                 }}
               >
                 <input
@@ -87,9 +97,6 @@ export default function Notes() {
                   onChange={() => toggleCompletion(note._id, !note.completed)}
                 />
                 {note.task}
-                {note.dueDate && (
-                  <p>Until: {new Date(note.dueDate).toLocaleDateString()}</p>
-                )}
               </li>
             ))
           ) : (
@@ -97,6 +104,7 @@ export default function Notes() {
           )}
         </ul>
       )}
+      <button onClick={deleteCompletedNotes}>Delete Completed Notes</button>
     </div>
   );
 }

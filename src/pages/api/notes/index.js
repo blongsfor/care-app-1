@@ -36,6 +36,14 @@ export default async function handler(req, res) {
     } catch (error) {
       res.status(500).json({ error: "Failed to update note" });
     }
+  }
+  if (req.method === "DELETE") {
+    try {
+      const deletedNotes = await Note.deleteMany({ completed: true });
+      res.status(200).json(deletedNotes);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to delete completed notes" });
+    }
   } else {
     res.status(405).json({ error: "Method not allowed" });
   }
