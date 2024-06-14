@@ -1,3 +1,4 @@
+// planning not to use this component anymore since we switched to navbar navigation but let's see
 import { useRouter } from "next/router";
 import React from "react";
 

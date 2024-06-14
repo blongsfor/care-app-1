@@ -1,12 +1,10 @@
 export default function DateTimePickerEnd() {
   const currentDate = new Date();
 
-  // Adjust for timezone offset
-  const timezoneOffset = currentDate.getTimezoneOffset();
+  const timezoneOffset = currentDate.getTimezoneOffset(); //set to our timezone
   currentDate.setMinutes(currentDate.getMinutes() - timezoneOffset);
 
-  // Format the current date and time in ISO 8601 format
-  const currentDateTime = currentDate.toISOString().slice(0, 16);
+  const currentDateTime = currentDate.toISOString().slice(0, 16); // Formats the current date and time in ISO format, 0-16 is the number of characters a date in this format has
   return (
     <>
       <label htmlFor="meeting-end">End: </label>

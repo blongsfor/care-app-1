@@ -5,11 +5,11 @@ export default async function handler(req, res) {
   await dbConnect();
 
   if (req.method === "GET") {
-    console.log("hier sollte Task???");
+    //console.log("hier sollte Task???");
     try {
       const tasks = await Task.find();
-      //   console.log("clients", tasks);
-      console.log("hier sollte Task;", tasks);
+      //   console.log("tasks", tasks);
+      //console.log("hier sollte Task;", tasks);
       res.status(200).json(tasks);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch tasks" });

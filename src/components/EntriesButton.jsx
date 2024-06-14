@@ -1,3 +1,4 @@
+// component not in use anymore, possibly later
 import { useRouter } from "next/router";
 import React from "react";
 

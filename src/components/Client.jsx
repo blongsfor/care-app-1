@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
-export default function Client({ image }) {
+export default function Client() {
   const router = useRouter();
   const { id } = router.query;
 
@@ -18,7 +18,7 @@ export default function Client({ image }) {
   if (!client) {
     return <h1>Client data not available</h1>;
   }
-  const datestring = new Date(client.dateOfBirth).toLocaleDateString("de-DE");
+  const datestring = new Date(client.dateOfBirth).toLocaleDateString("de-DE"); //formatting nicely
 
   return (
     <div>
