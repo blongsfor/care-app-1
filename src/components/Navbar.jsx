@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { FileText } from "lucide-react";
 import { UsersRound } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
+import { SquareCheckBig } from "lucide-react";
 import { Home } from "lucide-react";
 
 export default function Navbar() {
@@ -16,11 +17,14 @@ export default function Navbar() {
       <Link href="/">
         <Home />
       </Link>
-      <Link href="/entries">
-        <FileText />
+      <Link href="/notes">
+        <SquareCheckBig />
       </Link>
       <Link href="/clientlist">
         <UsersRound />
+      </Link>
+      <Link href="/entries">
+        <FileText />
       </Link>
     </nav>
   );
