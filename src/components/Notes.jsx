@@ -33,7 +33,7 @@ export default function Notes() {
         body: JSON.stringify({ task: newNote }),
       });
       const data = await res.json();
-      setNotes([...notes, data]);
+      setNotes([data, ...notes]);
       setNewNote("");
     } catch (error) {
       console.error("Error adding note:", error);
