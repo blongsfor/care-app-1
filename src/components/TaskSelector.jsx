@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 
-export default function Categoryelector() {
+export default function TaskSelector() {
   const [selectedTitle, setSelectedTitle] = useState("");
 
   const { data: tasks = [], error } = useSWR(`/api/tasks`);

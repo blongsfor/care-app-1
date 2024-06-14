@@ -14,7 +14,7 @@ const EditEntryButton = ({ clientID, docIndex, doc }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  }; // handle the change from the edit fields -> the new input
+  }; // handle the change from the edit fields -> the new input / name is the key that value needs to get changed
 
   const handleEdit = async (event) => {
     event.preventDefault();

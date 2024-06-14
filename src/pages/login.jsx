@@ -1,17 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function login() {
-  const router = useRouter();
   const { data: session } = useSession();
-
-  // useEffect(() => {
-  //   if (session) {
-  //     router.replace("/clientlist");
-  //   }
-  // }, [session, router]);
 
   const handleLogin = () => {
     signIn("credentials", {

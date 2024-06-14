@@ -4,7 +4,7 @@ import useSWR from "swr";
 export default function ClientSelector() {
   const [selectedClient, setSelectedClient] = useState("");
 
-  const { data: clients = [], error } = useSWR(`/api/clients`);
+  const { data: clients = [], error } = useSWR(`/api/clients`); //we need an empty array here in case data is undefined and the client data is an array of objs
 
   if (!clients && !error) {
     return <h1>Loading ...</h1>;
@@ -36,7 +36,7 @@ export default function ClientSelector() {
         {clients?.map((client) => (
           <option key={client._id} value={client._id}>
             {client.firstName} {client.lastName}
-          </option>
+          </option> //maps through clients and returns the name + last name in the selector
         ))}
       </select>
       <input
@@ -47,7 +47,7 @@ export default function ClientSelector() {
             " " +
             clients.find((client) => client._id === selectedClient)?.lastName ||
           ""
-        }
+        } //checks if the client you select matches client from DB via id
       />
     </div>
   );

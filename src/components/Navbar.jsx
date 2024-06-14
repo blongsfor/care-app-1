@@ -5,6 +5,7 @@ import { FileText } from "lucide-react";
 import { UsersRound } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
 import { SquareCheckBig } from "lucide-react";
+import { PencilLine } from "lucide-react";
 import { Home } from "lucide-react";
 
 export default function Navbar() {
@@ -25,6 +26,9 @@ export default function Navbar() {
       </Link>
       <Link href="/entries">
         <FileText />
+      </Link>
+      <Link href="/documentation-form">
+        <PencilLine />
       </Link>
     </nav>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import DateTimePickerStart from "./DateTimePickerStart";
 import DateTimePickerEnd from "./DateTimePickerEnd";
-import CategorySelector from "./CategorySelector";
+import CategorySelector from "./TaskSelector";
 import ClientSelector from "./ClientSelector";
 import { useRouter } from "next/router";
 
@@ -35,7 +35,7 @@ export default function DocumentationForm() {
 
     if (response.ok) {
       mutate();
-      router.push("/entries");
+      router.push("/entries"); //automatic redirection to the other entries after submitting, also takes care of form clearing
     } else {
       console.error("Failed to submit entry:", response);
     }
@@ -51,7 +51,7 @@ export default function DocumentationForm() {
         <ClientSelector />
 
         <div>
-          <label htmlFor="documentation">Documentation</label>
+          <label htmlFor="documentation">Documentation: </label>
           <textarea
             id="documentation"
             name="documentation"

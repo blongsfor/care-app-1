@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 
 export default function Notes() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]); //array of objects, deshalb empty
   const [newNote, setNewNote] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); //need to double-check this but it's working
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -58,6 +58,7 @@ export default function Notes() {
   const deleteCompletedNotes = async () => {
     try {
       const res = await fetch("/api/notes", {
+        //need to revise this but works
         method: "DELETE",
       });
       setNotes(notes.filter((note) => !note.completed));
@@ -68,16 +69,16 @@ export default function Notes() {
 
   return (
     <div>
-      <h2>Notes</h2>
+      <h2>Your To-Do</h2>
       <form onSubmit={addNote}>
         <input
           type="text"
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
-          placeholder="Enter your note"
+          placeholder="Enter your to-do"
           required
         />
-        <button type="submit">Add Note</button>
+        <button type="submit">Add Item</button>
       </form>
       {loading ? (
         <p>Loading...</p>
@@ -100,11 +101,11 @@ export default function Notes() {
               </li>
             ))
           ) : (
-            <p>No notes available</p>
+            <p>No To-Do's available</p>
           )}
         </ul>
       )}
-      <button onClick={deleteCompletedNotes}>Delete Completed Notes</button>
+      <button onClick={deleteCompletedNotes}>Delete Completed Items</button>
     </div>
   );
 }

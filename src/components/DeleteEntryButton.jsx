@@ -11,14 +11,14 @@ const DeleteEntryButton = ({ clientID, docIndex }) => {
 
     try {
       const response = await fetch(
-        `/api/entries/${clientID}?docIndex=${docIndex}`,
+        `/api/entries/${clientID}?docIndex=${docIndex}`, //docIndex was defined in Entrylist.jsx and then drilled
         {
           method: "DELETE",
         }
       );
 
       if (response.ok) {
-        router.reload(); // Reload the page after deleting the entry
+        router.reload(); // Reloads the page after deleting the entry
       } else {
         console.error("Failed to delete entry:", response);
       }

@@ -15,7 +15,7 @@ export default function Homepage() {
     <div>
       <Navbar />
       <LogoutButton />
-      <h2>Client List</h2>
+      <h2>Your Clients</h2>
       <ClientList clients={data} />
     </div>
   );
