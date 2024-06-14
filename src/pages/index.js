@@ -4,6 +4,7 @@ import Notes from "../components/Notes";
 import LogoutButton from "../components/LogoutButton";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Scheduler from "../components/Scheduler";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -54,6 +55,7 @@ export default function Home() {
     <>
       <h2>COMPANY NAME</h2>
       <Dashboard />
+      <Scheduler />
       <LogoutButton />
     </>
   );
