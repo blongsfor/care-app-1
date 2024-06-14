@@ -9,7 +9,6 @@ export default function Home() {
       <Navbar />
       <LogoutButton />
       <h2>DASHBOARD</h2>
-      <Notes />
     </>
   );
 }
