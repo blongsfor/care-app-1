@@ -1,5 +1,6 @@
 import { getSession } from "next-auth/react";
 import Navbar from "../components/Navbar";
+import Notes from "../components/Notes";
 import LogoutButton from "../components/LogoutButton";
 import { useRouter } from "next/router";
 import Image from "next/image";
