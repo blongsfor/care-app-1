@@ -29,14 +29,12 @@ export default function EntryList({ entries }) {
                       <li key={index}>
                         <p>
                           <strong>Date and Time:</strong>{" "}
-                          {formatDateTime(doc.datetimestart || doc.datetime)}
+                          {formatDateTime(doc.datetimestart)}
                         </p>
-                        {doc.datetimeend && (
-                          <p>
-                            <strong>End Time:</strong>{" "}
-                            {formatDateTime(doc.datetimeend)}
-                          </p>
-                        )}
+                        <p>
+                          <strong>End Time:</strong>{" "}
+                          {formatDateTime(doc.datetimeend)}
+                        </p>
                         <p>
                           <strong>Task:</strong> {doc.task}
                         </p>

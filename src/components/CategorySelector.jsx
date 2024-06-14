@@ -36,7 +36,7 @@ export default function Categoryelector() {
         >
           <option value="">Select Task</option>
           {tasks?.map((task) => (
-            <option key={task.id} value={task.task}>
+            <option key={task._id} value={task.task}>
               {task.task}
             </option>
           ))}
