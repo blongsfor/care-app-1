@@ -51,7 +51,7 @@ const Dashboard = () => {
 export default function Home() {
   return (
     <>
-      <h2>DASHBOARD</h2>
+      <h2>COMPANY NAME</h2>
       <Dashboard />
       <LogoutButton />
     </>
