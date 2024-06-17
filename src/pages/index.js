@@ -52,7 +52,6 @@ export default function Home() {
     <>
       <h2>CARE APP</h2>
       <Dashboard />
-      <LogoutButton />
     </>
   );
 }

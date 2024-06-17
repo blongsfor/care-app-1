@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { signOut } from "next-auth/react";
+import { LogOut } from "lucide-react";
 
 export default function LogoutButton() {
   const router = useRouter();
@@ -10,5 +11,9 @@ export default function LogoutButton() {
     router.replace("/login");
   };
 
-  return <button onClick={handleLogout}>Log out</button>;
+  return (
+    <button onClick={handleLogout}>
+      <LogOut />
+    </button>
+  );
 }

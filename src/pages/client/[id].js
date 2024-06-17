@@ -17,7 +17,6 @@ export default function ClientDetails() {
   return (
     <>
       <Navbar />
-      <LogoutButton />
       <Client {...data} />
     </>
   );

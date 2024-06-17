@@ -15,8 +15,6 @@ export default function Entries() {
   return (
     <>
       <Navbar />
-      <LogoutButton />
-
       <div>
         <h2>Documentation</h2>
         <EntryList entries={data} />
