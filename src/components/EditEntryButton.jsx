@@ -33,6 +33,18 @@ const EditEntryButton = ({ clientID, docIndex, doc }) => {
     }
   };
 
+  // // function formatDateTime(dateTimeString) {
+  // //   const date = new Date(dateTimeString);
+  // //   return date.toLocaleString("default", {
+  // //     day: "2-digit",
+  // //     month: "2-digit",
+  // //     year: "numeric",
+  // //     hour: "2-digit",
+  // //     minute: "2-digit",
+  // //     hour12: false, // Use 24-hour format
+  // //   });
+  // }
+
   return (
     //  if isEditing is true return a form with the inputs already done and make them editable
     <>
