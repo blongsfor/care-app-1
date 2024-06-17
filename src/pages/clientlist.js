@@ -13,7 +13,6 @@ export default function Homepage() {
 
   return (
     <div>
-      <Navbar />
       <h2>Your Clients</h2>
       <ClientList clients={data} />
     </div>

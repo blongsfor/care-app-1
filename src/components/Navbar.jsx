@@ -1,42 +1,5 @@
-// import React from "react";
-// import Link from "next/link";
-// import { useRouter } from "next/router";
-// import { FileText } from "lucide-react";
-// import { UsersRound } from "lucide-react";
-// import { ChevronLeft } from "lucide-react";
-// import { SquareCheckBig } from "lucide-react";
-// import { PencilLine } from "lucide-react";
-// import { Home } from "lucide-react";
-
-// export default function Navbar() {
-//   const router = useRouter();
-//   return (
-//     <nav>
-//       <a onClick={() => router.back()}>
-//         <ChevronLeft />
-//       </a>
-//       <Link href="/">
-//         <Home />
-//       </Link>
-//       <Link href="/notes">
-//         <SquareCheckBig />
-//       </Link>
-//       <Link href="/clientlist">
-//         <UsersRound />
-//       </Link>
-//       <Link href="/entries">
-//         <FileText />
-//       </Link>
-//       <Link href="/documentation-form">
-//         <PencilLine />
-//       </Link>
-//     </nav>
-//   );
-// }
-
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import {
   FileText,
   UsersRound,
@@ -99,19 +62,23 @@ export default function Navbar() {
         <Menu />
       </button>
       <nav style={navbarStyle}>
-        <Link href="/" style={linkStyle}>
+        <Link href="/" style={linkStyle} onClick={toggleNavbar}>
           <Home />
         </Link>
-        <Link href="/notes" style={linkStyle}>
+        <Link href="/notes" style={linkStyle} onClick={toggleNavbar}>
           <SquareCheckBig />
         </Link>
-        <Link href="/clientlist" style={linkStyle}>
+        <Link href="/clientlist" style={linkStyle} onClick={toggleNavbar}>
           <UsersRound />
         </Link>
-        <Link href="/entries" style={linkStyle}>
+        <Link href="/entries" style={linkStyle} onClick={toggleNavbar}>
           <FileText />
         </Link>
-        <Link href="/documentation-form" style={linkStyle}>
+        <Link
+          href="/documentation-form"
+          style={linkStyle}
+          onClick={toggleNavbar}
+        >
           <PencilLine />
         </Link>
         <LogoutButton style={logOutButtonStyle} />

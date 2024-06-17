@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import { SessionProvider } from "next-auth/react";
 import { SWRConfig } from "swr";
 
@@ -10,6 +11,9 @@ export default function App({
   return (
     <SWRConfig value={{ fetcher }}>
       <SessionProvider session={session}>
+        <header>
+          <Navbar />
+        </header>
         <Component {...pageProps} />
       </SessionProvider>
     </SWRConfig>
