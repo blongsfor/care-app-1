@@ -10,6 +10,8 @@ import {
   PencilLine,
   LogOut,
 } from "lucide-react";
+import { useRouter } from "next/router";
+import { signOut } from "next-auth/react";
 import LogoutButton from "./LogoutButton";
 
 export default function Navbar() {
@@ -17,6 +19,13 @@ export default function Navbar() {
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: "/login" });
+    await router.replace("/login");
   };
 
   const navbarStyle = {
@@ -81,7 +90,9 @@ export default function Navbar() {
         >
           <PencilLine />
         </Link>
-        <LogoutButton style={logOutButtonStyle} />
+        <Link href={"/login"}>
+          <LogOut style={linkStyle} onClick={handleLogout} />
+        </Link>
       </nav>
     </div>
   );

@@ -16,6 +16,7 @@ export default function Entries() {
   return (
     <>
       <div>
+        <Navbar />
         <h2>Documentation</h2>
         <EntryList entries={data} />
       </div>

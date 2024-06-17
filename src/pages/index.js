@@ -2,6 +2,7 @@ import { getSession } from "next-auth/react";
 import LogoutButton from "../components/LogoutButton";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -50,6 +51,7 @@ const Dashboard = () => {
 export default function Home() {
   return (
     <>
+      <Navbar />
       <h2>CARE APP</h2>
       <Dashboard />
     </>

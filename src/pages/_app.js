@@ -11,9 +11,6 @@ export default function App({
   return (
     <SWRConfig value={{ fetcher }}>
       <SessionProvider session={session}>
-        <header>
-          <Navbar />
-        </header>
         <Component {...pageProps} />
       </SessionProvider>
     </SWRConfig>
