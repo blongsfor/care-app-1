@@ -1,25 +1,24 @@
 import useSWR from "swr";
 import EntryList from "../components/EntryList";
-import LogoutButton from "@/components/LogoutButton";
-import DocumentButton from "@/components/DocumentButton";
 import Navbar from "../components/Navbar";
 
 export default function Entries() {
-  const { data, error } = useSWR("/api/entries");
+  const { data, error, mutate } = useSWR("/api/entries");
 
   if (error) return <div>Failed to load entries</div>;
   if (!data) return <div>Loading...</div>;
 
-  //console.log("here should be data:", data);
+  // const headlineStyle = {
+  //   marginTop: "70px",
+  //   marginBottom: "20px",
+  // };
 
   return (
     <>
-      <Navbar />
-      <LogoutButton />
-
       <div>
+        <Navbar />
         <h2>Documentation</h2>
-        <EntryList entries={data} />
+        <EntryList entries={data} onUpdate={mutate} onDelete={mutate} />
       </div>
     </>
   );

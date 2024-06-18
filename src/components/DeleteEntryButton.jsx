@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-const DeleteEntryButton = ({ clientID, docIndex }) => {
+const DeleteEntryButton = ({ clientID, docIndex, onDelete }) => {
   const router = useRouter();
 
   const handleDelete = async () => {
@@ -18,7 +18,7 @@ const DeleteEntryButton = ({ clientID, docIndex }) => {
       );
 
       if (response.ok) {
-        router.reload(); // Reloads the page after deleting the entry
+        onDelete();
       } else {
         console.error("Failed to delete entry:", response);
       }
