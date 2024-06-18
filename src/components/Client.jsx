@@ -21,25 +21,61 @@ export default function Client() {
   const datestring = new Date(client.dateOfBirth).toLocaleDateString("de-DE"); //formatting nicely
 
   return (
-    <div>
+    <div style={styles.container}>
       <img
         src={client.picture}
         alt={`${client.firstName} ${client.lastName}`}
+        style={styles.image}
       />
-
-      <p>Date of Birth: {datestring}</p>
-      <p>Place of Birth: {client.placeOfBirth}</p>
-      <p>
-        Address: {client.address.street}, {client.address.city},{" "}
-        {client.address.zipCode}
-      </p>
-      <p>
-        Contact: {client.contact.telefon}, {client.contact.email}
-      </p>
-      <p>Parents: {client.additionalInformation.parents}</p>
-      <p>
-        Legal Representative: {client.additionalInformation.legalRepresentative}
-      </p>
+      <div style={styles.details}>
+        <p>
+          Name: {client.firstName} {client.lastName}
+        </p>
+        <p>Date of Birth: {datestring}</p>
+        <p>Place of Birth: {client.placeOfBirth}</p>
+        <p>
+          Address: {client.address.street}, {client.address.city},{" "}
+          {client.address.zipCode}
+        </p>
+        <p>
+          Contact: {client.contact.telefon}, {client.contact.email}
+        </p>
+        <p>Parents: {client.additionalInformation.parents}</p>
+        <p>
+          Legal Representative:{" "}
+          {client.additionalInformation.legalRepresentative}
+        </p>
+      </div>
     </div>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "20px",
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    maxWidth: "600px",
+    margin: "auto",
+    marginTop: "50px",
+    backgroundColor: "rgba(85, 111, 154, 0.6)", // Semi-transparent background color
+    backdropFilter: "blur(14px)", // Blurring effect
+    zIndex: -1,
+  },
+  image: {
+    width: "200px",
+    height: "200px",
+    objectFit: "cover",
+    borderRadius: "50%",
+    marginBottom: "20px",
+  },
+  details: {
+    textAlign: "left",
+    width: "100%",
+    maxWidth: "400px",
+  },
+};
