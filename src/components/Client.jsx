@@ -18,71 +18,122 @@ export default function Client() {
   if (!client) {
     return <h1>Client data not available</h1>;
   }
-  const datestring = new Date(client.dateOfBirth).toLocaleDateString("de-DE"); //formatting nicely
+
+  const datestring = new Date(client.dateOfBirth).toLocaleDateString("de-DE"); // formatting nicely
 
   return (
-    <div style={styles.container}>
+    <div style={styles.wrapper}>
       <img
         src={client.picture}
         alt={`${client.firstName} ${client.lastName}`}
         style={styles.image}
       />
-      <div style={styles.details}>
-        <p>
-          <strong>Name:</strong> {client.firstName} {client.lastName}
-        </p>
-        <p>
-          <strong>Date of Birth: </strong>
-          {datestring}
-        </p>
-        <p>
-          <strong>Place of Birth:</strong> {client.placeOfBirth}
-        </p>
-        <p>
-          <strong>Address: </strong> {client.address.street},{" "}
-          {client.address.city}, {client.address.zipCode}
-        </p>
-        <p>
-          <strong>Contact: </strong> {client.contact.telefon},{" "}
-          {client.contact.email}
-        </p>
-        <p>
-          <strong>Parents: </strong> {client.additionalInformation.parents}
-        </p>
-        <p>
-          <strong>Legal Representative: </strong>
-          {client.additionalInformation.legalRepresentative}
-        </p>
+      <div style={styles.container}>
+        <div style={styles.details}>
+          <p style={styles.name}>
+            <strong>Name:</strong> {client.firstName} {client.lastName}
+          </p>
+          <div style={styles.infoBox}>
+            <p style={styles.paragraph}>
+              <strong>Date of Birth:</strong>
+            </p>
+            <div style={styles.infoData}>{datestring}</div>
+          </div>
+          <div style={styles.infoBox}>
+            <p style={styles.paragraph}>
+              <strong>Place of Birth:</strong>
+            </p>
+            <div style={styles.infoData}>{client.placeOfBirth}</div>
+          </div>
+          <div style={styles.infoBox}>
+            <p style={styles.paragraph}>
+              <strong>Address:</strong>
+            </p>
+            <div style={styles.infoData}>
+              {client.address.street}, {client.address.city},{" "}
+              {client.address.zipCode}
+            </div>
+          </div>
+          <div style={styles.infoBox}>
+            <p style={styles.paragraph}>
+              <strong>Contact:</strong>
+            </p>
+            <div style={styles.infoData}>
+              {client.contact.telefon}, {client.contact.email}
+            </div>
+          </div>
+          <div style={styles.infoBox}>
+            <p style={styles.paragraph}>
+              <strong>Parents:</strong>
+            </p>
+            <div style={styles.infoData}>
+              {client.additionalInformation.parents}
+            </div>
+          </div>
+          <div style={styles.infoBox}>
+            <p style={styles.paragraph}>
+              <strong>Legal Representative:</strong>
+            </p>
+            <div style={styles.infoData}>
+              {client.additionalInformation.legalRepresentative}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 const styles = {
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "10vh",
+  },
   container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     padding: "20px",
-    border: "1px solid #ccc",
+    backdropFilter: "blur(10px)",
     borderRadius: "8px",
     maxWidth: "80vw",
-    margin: "auto",
-    marginTop: "15vh",
-    backgroundColor: "rgba(85, 111, 154, 0.6)", // Semi-transparent background color
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
   },
   image: {
     width: "200px",
     height: "200px",
     objectFit: "cover",
-    borderRadius: "25%",
+    borderRadius: "8px",
     marginBottom: "20px",
+    boxShadow:
+      "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
   },
   details: {
     textAlign: "center",
     width: "100%",
     maxWidth: "70vw",
     lineHeight: "1.5",
+  },
+  name: {
+    marginBottom: "20px",
+    fontSize: "1.5em",
+    color: "white",
+  },
+  infoBox: {
+    marginBottom: "20px",
+  },
+  infoData: {
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    padding: "10px",
+    backgroundColor: "#fae095",
+  },
+  paragraph: {
+    textAlign: "left",
+    marginBottom: "5px",
+    color: "white",
   },
 };

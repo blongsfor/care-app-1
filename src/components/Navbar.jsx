@@ -44,6 +44,7 @@ export default function Navbar() {
     paddingTop: "60px", // Added padding to avoid overlap with the button
     borderTopRightRadius: "20px", // Rounded corner on the top right
     borderBottomRightRadius: "20px",
+    zIndex: "999",
   };
 
   const linkStyle = {
