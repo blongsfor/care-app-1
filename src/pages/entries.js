@@ -16,7 +16,7 @@ export default function Entries() {
   return (
     <>
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <h2>Documentation</h2>
         <EntryList entries={data} onUpdate={mutate} onDelete={mutate} />
       </div>

@@ -29,20 +29,28 @@ export default function Client() {
       />
       <div style={styles.details}>
         <p>
-          Name: {client.firstName} {client.lastName}
-        </p>
-        <p>Date of Birth: {datestring}</p>
-        <p>Place of Birth: {client.placeOfBirth}</p>
-        <p>
-          Address: {client.address.street}, {client.address.city},{" "}
-          {client.address.zipCode}
+          <strong>Name:</strong> {client.firstName} {client.lastName}
         </p>
         <p>
-          Contact: {client.contact.telefon}, {client.contact.email}
+          <strong>Date of Birth: </strong>
+          {datestring}
         </p>
-        <p>Parents: {client.additionalInformation.parents}</p>
         <p>
-          Legal Representative:{" "}
+          <strong>Place of Birth:</strong> {client.placeOfBirth}
+        </p>
+        <p>
+          <strong>Address: </strong> {client.address.street},{" "}
+          {client.address.city}, {client.address.zipCode}
+        </p>
+        <p>
+          <strong>Contact: </strong> {client.contact.telefon},{" "}
+          {client.contact.email}
+        </p>
+        <p>
+          <strong>Parents: </strong> {client.additionalInformation.parents}
+        </p>
+        <p>
+          <strong>Legal Representative: </strong>
           {client.additionalInformation.legalRepresentative}
         </p>
       </div>
@@ -59,12 +67,10 @@ const styles = {
     padding: "20px",
     border: "1px solid #ccc",
     borderRadius: "8px",
-    maxWidth: "600px",
+    maxWidth: "80vw",
     margin: "auto",
-    marginTop: "50px",
+    marginTop: "15vh",
     backgroundColor: "rgba(85, 111, 154, 0.6)", // Semi-transparent background color
-    backdropFilter: "blur(14px)", // Blurring effect
-    zIndex: -1,
   },
   image: {
     width: "200px",
@@ -76,6 +82,7 @@ const styles = {
   details: {
     textAlign: "left",
     width: "100%",
-    maxWidth: "400px",
+    maxWidth: "70vw",
+    lineHeight: "1.5",
   },
 };
