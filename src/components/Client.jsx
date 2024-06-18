@@ -80,7 +80,7 @@ const styles = {
     marginBottom: "20px",
   },
   details: {
-    textAlign: "left",
+    textAlign: "center",
     width: "100%",
     maxWidth: "70vw",
     lineHeight: "1.5",
