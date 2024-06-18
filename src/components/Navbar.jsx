@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/router";
 import { signOut } from "next-auth/react";
-import LogoutButton from "./LogoutButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,11 +57,6 @@ export default function Navbar() {
     top: "20px",
     left: "20px",
     zIndex: 1000,
-  };
-
-  const logOutButtonStyle = {
-    margin: "20px 0",
-    background: "none",
   };
 
   return (

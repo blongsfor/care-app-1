@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import { SessionProvider } from "next-auth/react";
 import { SWRConfig } from "swr";
 
