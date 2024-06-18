@@ -76,7 +76,7 @@ const styles = {
     width: "200px",
     height: "200px",
     objectFit: "cover",
-    borderRadius: "50%",
+    borderRadius: "25%",
     marginBottom: "20px",
   },
   details: {
