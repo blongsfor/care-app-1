@@ -31,7 +31,8 @@ export default function Client() {
       <div style={styles.container}>
         <div style={styles.details}>
           <p style={styles.name}>
-            <strong>Name:</strong> {client.firstName} {client.lastName}
+            <strong>Name:</strong> <br />
+            {client.firstName} {client.lastName}
           </p>
           <div style={styles.infoBox}>
             <p style={styles.paragraph}>
