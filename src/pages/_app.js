@@ -1,5 +1,6 @@
 import { SessionProvider } from "next-auth/react";
 import { SWRConfig } from "swr";
+import "../styles/globals.css";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
