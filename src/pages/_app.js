@@ -1,17 +1,31 @@
-import { SessionProvider } from "next-auth/react";
+import { SessionProvider, useSession } from "next-auth/react";
 import { SWRConfig } from "swr";
+import Navbar from "@/components/Navbar";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
+function App({ Component, pageProps }) {
   return (
-    <SWRConfig value={{ fetcher }}>
-      <SessionProvider session={session}>
-        <Component {...pageProps} />
-      </SessionProvider>
-    </SWRConfig>
+    <SessionProvider session={pageProps.session}>
+      <SWRConfig value={{ fetcher }}>
+        <AppContent Component={Component} pageProps={pageProps} />
+      </SWRConfig>
+    </SessionProvider>
   );
 }
+
+function AppContent({ Component, pageProps }) {
+  const { data: session } = useSession();
+
+  // Determine if user is authenticated
+  const isLoggedIn = session?.user;
+
+  return (
+    <>
+      <header>{isLoggedIn && <Navbar />}</header>
+      <Component {...pageProps} />
+    </>
+  );
+}
+
+export default App;
