@@ -2,7 +2,7 @@ import React from "react";
 import EditEntryButton from "./EditEntryButton";
 import DeleteEntryButton from "./DeleteEntryButton";
 
-export default function EntryList({ entries }) {
+export default function EntryList({ entries, onUpdate, onDelete }) {
   //this function formats the time
   function formatDateTime(dateTimeString) {
     const date = new Date(dateTimeString);
@@ -46,10 +46,12 @@ export default function EntryList({ entries }) {
                           clientID={entry.clientID}
                           docIndex={index}
                           doc={doc}
+                          onUpdate={onUpdate}
                         />
                         <DeleteEntryButton
                           clientID={entry.clientID}
                           docIndex={index}
+                          onDelete={onDelete}
                         />
                       </li>
                     ))}

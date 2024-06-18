@@ -3,7 +3,7 @@ import EntryList from "../components/EntryList";
 import Navbar from "../components/Navbar";
 
 export default function Entries() {
-  const { data, error } = useSWR("/api/entries");
+  const { data, error, mutate } = useSWR("/api/entries");
 
   if (error) return <div>Failed to load entries</div>;
   if (!data) return <div>Loading...</div>;
@@ -18,7 +18,7 @@ export default function Entries() {
       <div>
         <Navbar />
         <h2>Documentation</h2>
-        <EntryList entries={data} />
+        <EntryList entries={data} onUpdate={mutate} onDelete={mutate} />
       </div>
     </>
   );
