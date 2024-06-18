@@ -20,12 +20,5 @@ a {
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #fae095,
-    #8ddafe,
-    #3c5481,
-    #fceec6,
-    #f8d264
-  );
+  background: radial-gradient(circle, #3c5481, #1d274b);
 }
