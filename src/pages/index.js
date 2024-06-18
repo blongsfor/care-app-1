@@ -51,7 +51,7 @@ const Dashboard = () => {
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <h2>CARE APP</h2>
       <Dashboard />
     </>
