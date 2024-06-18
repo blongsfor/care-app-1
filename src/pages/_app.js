@@ -1,5 +1,6 @@
 import { SessionProvider, useSession } from "next-auth/react";
 import { SWRConfig } from "swr";
+import "../styles/globals.css";
 import Navbar from "@/components/Navbar";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());

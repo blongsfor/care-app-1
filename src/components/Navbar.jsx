@@ -31,15 +31,19 @@ export default function Navbar() {
     position: "fixed",
     top: 0,
     left: 0,
-    width: isOpen ? "10%" : "0",
+    width: isOpen ? "45%" : "0",
     height: "100%",
-    backgroundColor: "#3C5481",
+    backgroundColor: "rgba(85, 111, 154, 0.6)", // Semi-transparent background color
+    backdropFilter: "blur(14px)", // Blurring effect
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     overflowX: "hidden",
     transition: "width 0.5s ease-in-out",
+    paddingTop: "60px", // Added padding to avoid overlap with the button
+    borderTopRightRadius: "20px", // Rounded corner on the top right
+    borderBottomRightRadius: "20px",
   };
 
   const linkStyle = {
@@ -47,9 +51,16 @@ export default function Navbar() {
     textDecoration: "none",
     margin: "20px 0",
     cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+  };
+
+  const iconStyle = {
+    marginRight: "10px",
   };
 
   const burgerButtonStyle = {
+    color: "white",
     background: "none",
     border: "none",
     cursor: "pointer",
@@ -66,26 +77,26 @@ export default function Navbar() {
       </button>
       <nav style={navbarStyle}>
         <Link href="/" style={linkStyle} onClick={toggleNavbar}>
-          <Home />
+          <Home style={iconStyle} /> Home
         </Link>
         <Link href="/notes" style={linkStyle} onClick={toggleNavbar}>
-          <SquareCheckBig />
+          <SquareCheckBig style={iconStyle} /> Tasks
         </Link>
         <Link href="/clientlist" style={linkStyle} onClick={toggleNavbar}>
-          <UsersRound />
+          <UsersRound style={iconStyle} /> Clients
         </Link>
         <Link href="/entries" style={linkStyle} onClick={toggleNavbar}>
-          <FileText />
+          <FileText style={iconStyle} /> Entries
         </Link>
         <Link
           href="/documentation-form"
           style={linkStyle}
           onClick={toggleNavbar}
         >
-          <PencilLine />
+          <PencilLine style={iconStyle} /> Create
         </Link>
-        <Link href={"/login"}>
-          <LogOut style={linkStyle} onClick={handleLogout} />
+        <Link href={"/login"} style={linkStyle} onClick={handleLogout}>
+          <LogOut style={iconStyle} /> Logout
         </Link>
       </nav>
     </div>
