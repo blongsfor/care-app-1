@@ -31,10 +31,10 @@ export default function Navbar() {
     position: "fixed",
     top: 0,
     left: 0,
-    width: isOpen ? "45%" : "0",
+    width: isOpen ? "47%" : "0",
     height: "100%",
     backgroundColor: "rgba(85, 111, 154, 0.6)", // Semi-transparent background color
-    backdropFilter: "blur(14px)", // Blurring effect
+    backdropFilter: "blur(12px)", // Blurring effect
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
