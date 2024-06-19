@@ -82,6 +82,14 @@ const styles = {
     flexDirection: "column",
     alignItems: "flex-start", // Align items to the left
     padding: "20px",
+    width: "90%",
+    // maxWidth: "500px",
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "all 0.5s ease-in-out",
+    marginTop: "20px",
   },
 
   form: {
