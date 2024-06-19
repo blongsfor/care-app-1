@@ -4,8 +4,16 @@ import Navbar from "@/components/Navbar";
 export default function NotesPage() {
   return (
     <>
-      {/* <Navbar /> */}
+      <h2 style={styles.header}>Tasks</h2>
       <Notes />
     </>
   );
 }
+
+const styles = {
+  header: {
+    textAlign: "center",
+    marginTop: "20px",
+    color: "white",
+  },
+};
