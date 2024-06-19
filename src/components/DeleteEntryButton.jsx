@@ -39,8 +39,8 @@ export default DeleteEntryButton;
 const styles = {
   deleteButton: {
     position: "absolute",
-    top: "5px", // Adjust the top position to your preference
-    right: "5px", // Adjust the right position to your preference
+    top: "7px",
+    right: "7px",
     padding: "5px",
     fontSize: "0.8em",
     borderRadius: "4px",

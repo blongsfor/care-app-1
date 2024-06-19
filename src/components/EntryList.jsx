@@ -79,14 +79,14 @@ export default function EntryList({ entries, onUpdate, onDelete }) {
 
 const styles = {
   container: {
-    width: "90%",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start",
     padding: "20px",
     transition: "all 0.5s ease-in-out",
-    marginTop: "20px",
+    marginTop: "10px",
   },
   ul: {
     listStyle: "none",
