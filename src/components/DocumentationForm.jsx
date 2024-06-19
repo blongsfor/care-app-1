@@ -43,7 +43,6 @@ export default function DocumentationForm() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.heading}>Create</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <div style={styles.inputGroup}>
           <DateTimePickerStart />
@@ -64,7 +63,7 @@ export default function DocumentationForm() {
           <textarea
             id="documentation"
             name="documentation"
-            rows="15"
+            rows="12"
             required
             style={styles.textarea}
           ></textarea>
@@ -81,21 +80,20 @@ const styles = {
   container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start", // Align items to the left
     padding: "20px",
   },
-  heading: {
-    fontSize: "2em",
-    color: "white",
-  },
+
   form: {
     width: "100%",
     maxWidth: "600px",
     display: "flex",
     flexDirection: "column",
+    alignItems: "flex-start", // Align form elements to the left
   },
   inputGroup: {
     marginBottom: "20px",
+    width: "100%", // Ensure input groups take full width for better alignment
   },
   label: {
     marginBottom: "10px",
