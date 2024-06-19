@@ -10,7 +10,9 @@ export default function DateTimePickerStart() {
 
   return (
     <div>
-      <label htmlFor="meeting-start">Start: </label>
+      <label htmlFor="meeting-start" style={styles.label}>
+        Start:{" "}
+      </label>
       <input
         type="datetime-local"
         id="meeting-start"
@@ -20,3 +22,11 @@ export default function DateTimePickerStart() {
     </div>
   );
 }
+
+const styles = {
+  label: {
+    marginBottom: "5px",
+    fontSize: "1em",
+    color: "white",
+  },
+};

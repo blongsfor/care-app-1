@@ -24,7 +24,9 @@ export default function ClientSelector() {
 
   return (
     <div>
-      <label htmlFor="client">Client</label>
+      <label htmlFor="client" style={styles.label}>
+        Client:{" "}
+      </label>
       <select
         id="client"
         name="clientID"
@@ -52,3 +54,11 @@ export default function ClientSelector() {
     </div>
   );
 }
+
+const styles = {
+  label: {
+    marginBottom: "5px",
+    fontSize: "1em",
+    color: "white",
+  },
+};

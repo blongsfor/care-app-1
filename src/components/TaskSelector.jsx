@@ -27,7 +27,9 @@ export default function TaskSelector() {
   return (
     <>
       <div>
-        <label htmlFor="task">Task</label>
+        <label htmlFor="task" style={styles.label}>
+          Task:{" "}
+        </label>
         <select
           id="task"
           name="task"
@@ -45,3 +47,11 @@ export default function TaskSelector() {
     </>
   );
 }
+
+const styles = {
+  label: {
+    marginBottom: "5px",
+    fontSize: "1em",
+    color: "white",
+  },
+};

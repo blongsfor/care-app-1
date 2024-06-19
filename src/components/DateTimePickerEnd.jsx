@@ -7,7 +7,9 @@ export default function DateTimePickerEnd() {
   const currentDateTime = currentDate.toISOString().slice(0, 16); // Formats the current date and time in ISO format, 0-16 is the number of characters a date in this format has
   return (
     <>
-      <label htmlFor="meeting-end">End: </label>
+      <label htmlFor="meeting-end" style={styles.label}>
+        End:{" "}
+      </label>
       <input
         type="datetime-local"
         id="meeting-end"
@@ -17,3 +19,11 @@ export default function DateTimePickerEnd() {
     </>
   );
 }
+
+const styles = {
+  label: {
+    marginBottom: "5px",
+    fontSize: "1em",
+    color: "white",
+  },
+};
