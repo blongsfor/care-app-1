@@ -39,13 +39,13 @@ export default DeleteEntryButton;
 const styles = {
   deleteButton: {
     position: "absolute",
-    top: "7px",
-    right: "7px",
+    top: "10px",
+    right: "10px",
     padding: "5px",
     fontSize: "0.8em",
     borderRadius: "4px",
     border: "none",
-    backgroundColor: "darkorange",
+    backgroundColor: "#f04b3f",
     color: "#fff",
     cursor: "pointer",
     transition: "background-color 0.2s",
