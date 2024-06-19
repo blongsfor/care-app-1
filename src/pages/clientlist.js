@@ -13,9 +13,16 @@ export default function Homepage() {
 
   return (
     <div>
-      {/* <Navbar /> */}
-      <h2>Your Clients</h2>
+      <h2 style={styles.header}>Your Clients</h2>
       <ClientList clients={data} />
     </div>
   );
 }
+
+const styles = {
+  header: {
+    textAlign: "center",
+    marginTop: "20px",
+    color: "white",
+  },
+};
