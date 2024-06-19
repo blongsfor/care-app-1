@@ -60,7 +60,7 @@ export default function Client() {
               <strong>Contact:</strong>
             </p>
             <div style={styles.infoData}>
-              {client.contact.telefon}, {client.contact.email}
+              {client.contact.telefon} {client.contact.email}
             </div>
           </div>
           <div style={styles.infoBox}>
@@ -102,6 +102,7 @@ const styles = {
     borderRadius: "8px",
     maxWidth: "80vw",
     backgroundColor: "rgba(85, 111, 154, 0.6)",
+    marginBottom: "20px",
   },
   image: {
     width: "200px",

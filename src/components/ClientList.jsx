@@ -37,7 +37,6 @@ const styles = {
   listItem: {
     margin: "20px",
     padding: "10px",
-    border: "1px solid #ccc",
     borderRadius: "8px",
     backgroundColor: "rgba(85, 111, 154, 0.6)",
     transition: "transform 0.2s",
@@ -48,7 +47,13 @@ const styles = {
     color: "inherit",
   },
   image: {
-    borderRadius: "25%",
+    width: "200px",
+    height: "200px",
+    objectFit: "cover",
+    borderRadius: "8px",
+    marginBottom: "20px",
+    boxShadow:
+      "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
   },
   clientName: {
     marginTop: "10px",
