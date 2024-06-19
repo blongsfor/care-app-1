@@ -93,7 +93,6 @@ const styles = {
 
   form: {
     width: "100%",
-    maxWidth: "600px",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start", // Align form elements to the left
