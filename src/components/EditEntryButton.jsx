@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { format, parse } from "date-fns";
 
 const EditEntryButton = ({ clientID, docIndex, doc, onUpdate }) => {
-  const [isEditing, setIsEditing] = useState(false); // to see if in editing mode or not, false because normally it's not
+  const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     datetimestart: format(new Date(doc.datetimestart), "dd.MM.yyyy HH:mm"),
     datetimeend: format(new Date(doc.datetimeend), "dd.MM.yyyy HH:mm"),
@@ -12,7 +12,7 @@ const EditEntryButton = ({ clientID, docIndex, doc, onUpdate }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value }); // handle the change from the edit fields -> the new input / name is the key that value needs to get changed
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleEdit = async (event) => {
@@ -47,45 +47,93 @@ const EditEntryButton = ({ clientID, docIndex, doc, onUpdate }) => {
   };
 
   return (
-    //  if isEditing is true return a form with the inputs already done and make them editable
     <>
       {isEditing ? (
-        <form onSubmit={handleEdit}>
+        <form onSubmit={handleEdit} style={styles.form}>
           <input
             type="text"
             name="datetimestart"
             value={formData.datetimestart}
             onChange={handleInputChange}
+            style={styles.input}
           />
           <input
             type="text"
             name="datetimeend"
             value={formData.datetimeend}
             onChange={handleInputChange}
+            style={styles.input}
           />
           <input
             type="text"
             name="task"
             value={formData.task}
             onChange={handleInputChange}
+            style={styles.input}
           />
-          <input
-            type="text"
+          <textarea
             name="details"
             value={formData.details}
             onChange={handleInputChange}
+            style={styles.textarea}
           />
-          <button type="submit">Save</button>
-          <button type="button" onClick={() => setIsEditing(false)}>
+          <button type="submit" style={styles.button}>
+            Save
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsEditing(false)}
+            style={styles.button}
+          >
             Cancel
           </button>
         </form>
       ) : (
-        <button onClick={() => setIsEditing(true)}>Edit Entry</button>
+        <button style={styles.button} onClick={() => setIsEditing(true)}>
+          Edit Entry
+        </button>
       )}
     </>
-    // when submitting  its edited and to false again when cancel
   );
+};
+
+const styles = {
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    marginTop: "10px",
+  },
+  input: {
+    padding: "8px",
+    marginBottom: "10px",
+    borderRadius: "4px",
+    border: "1px solid #ccc",
+    fontSize: "1em",
+    width: "100%",
+    boxSizing: "border-box",
+  },
+  textarea: {
+    padding: "8px",
+    marginBottom: "10px",
+    borderRadius: "4px",
+    border: "1px solid #ccc",
+    fontSize: "1em",
+    width: "100%",
+    minHeight: "100px",
+    boxSizing: "border-box",
+  },
+  button: {
+    padding: "10px 20px",
+    fontSize: "1em",
+    borderRadius: "4px",
+    border: "none",
+    backgroundColor: "#556f9a",
+    marginTop: "10px",
+    color: "#fff",
+    cursor: "pointer",
+    transition: "background-color 0.2s",
+  },
 };
 
 export default EditEntryButton;

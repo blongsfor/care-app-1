@@ -8,18 +8,20 @@ export default function Entries() {
   if (error) return <div>Failed to load entries</div>;
   if (!data) return <div>Loading...</div>;
 
-  // const headlineStyle = {
-  //   marginTop: "70px",
-  //   marginBottom: "20px",
-  // };
-
   return (
     <>
       <div>
-        {/* <Navbar /> */}
-        <h2>Documentation</h2>
+        <h2 style={styles.header}>Documentation</h2>
         <EntryList entries={data} onUpdate={mutate} onDelete={mutate} />
       </div>
     </>
   );
 }
+
+const styles = {
+  header: {
+    textAlign: "center",
+    marginTop: "20px",
+    color: "white",
+  },
+};
