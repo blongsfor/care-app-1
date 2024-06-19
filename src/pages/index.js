@@ -23,7 +23,7 @@ const Dashboard = () => {
   };
 
   return (
-    <>
+    <div style={styles.mainContainer}>
       <div style={session ? styles.containerhome : styles.container}>
         {session ? (
           <div style={styles.content}>
@@ -47,55 +47,57 @@ const Dashboard = () => {
         )}
       </div>
 
-      <div style={styles.container1} onClick={() => handleNavigation("/notes")}>
-        <Image
-          src="/square-check-big.svg"
-          alt="To-Do list icon"
-          width={100}
-          height={100}
-          style={{ filter: "invert(1)", cursor: "pointer" }}
-        />
-      </div>
+      <div style={styles.gridContainer}>
+        <div style={styles.gridItem} onClick={() => handleNavigation("/notes")}>
+          <Image
+            src="/square-check-big.svg"
+            alt="To-Do list icon"
+            width={100}
+            height={100}
+            style={{ filter: "invert(1)", cursor: "pointer" }}
+          />
+        </div>
 
-      <div
-        style={styles.container2}
-        onClick={() => handleNavigation("/clientlist")}
-      >
-        <Image
-          src="/users-round.svg"
-          alt="Clientlist icon"
-          width={100}
-          height={100}
-          style={{ filter: "invert(1)", cursor: "pointer" }}
-        />
-      </div>
+        <div
+          style={styles.gridItem}
+          onClick={() => handleNavigation("/clientlist")}
+        >
+          <Image
+            src="/users-round.svg"
+            alt="Clientlist icon"
+            width={100}
+            height={100}
+            style={{ filter: "invert(1)", cursor: "pointer" }}
+          />
+        </div>
 
-      <div
-        style={styles.container3}
-        onClick={() => handleNavigation("/entries")}
-      >
-        <Image
-          src="/file-text.svg"
-          alt="Entries icon"
-          width={100}
-          height={100}
-          style={{ filter: "invert(1)", cursor: "pointer" }}
-        />
-      </div>
+        <div
+          style={styles.gridItem}
+          onClick={() => handleNavigation("/entries")}
+        >
+          <Image
+            src="/file-text.svg"
+            alt="Entries icon"
+            width={100}
+            height={100}
+            style={{ filter: "invert(1)", cursor: "pointer" }}
+          />
+        </div>
 
-      <div
-        style={styles.container4}
-        onClick={() => handleNavigation("/documentation-form")}
-      >
-        <Image
-          src="/pencil-line.svg"
-          alt="Documentation Form icon"
-          width={100}
-          height={100}
-          style={{ filter: "invert(1)", cursor: "pointer" }}
-        />
+        <div
+          style={styles.gridItem}
+          onClick={() => handleNavigation("/documentation-form")}
+        >
+          <Image
+            src="/pencil-line.svg"
+            alt="Documentation Form icon"
+            width={100}
+            height={100}
+            style={{ filter: "invert(1)", cursor: "pointer" }}
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -115,75 +117,39 @@ export async function getServerSideProps(context) {
     };
   }
 }
-
 const styles = {
+  mainContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "20px",
+  },
   header: {
     textAlign: "center",
     marginTop: "20px",
     color: "white",
   },
-  container1: {
-    color: "white",
-    position: "fixed",
-    top: "400px",
-    left: "105px",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
-    backdropFilter: "blur(14px)",
-    borderRadius: "15px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    padding: "20px",
-    width: "90%",
-    maxWidth: "140px",
-  },
-
-  container2: {
-    position: "fixed",
-    top: "400px",
-    left: "272px",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
-    backdropFilter: "blur(14px)",
-    borderRadius: "15px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    padding: "20px",
-    width: "90%",
-    maxWidth: "140px",
-  },
-
-  container3: {
-    position: "fixed",
-    top: "570px",
-    left: "105px",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
-    backdropFilter: "blur(14px)",
-    borderRadius: "15px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    padding: "20px",
-    width: "90%",
-    maxWidth: "140px",
-  },
-
-  container4: {
-    position: "fixed",
-    top: "570px",
-    left: "272px",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
-    backdropFilter: "blur(14px)",
-    borderRadius: "15px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    padding: "20px",
-    width: "90%",
-    maxWidth: "140px",
-  },
-
   containerhome: {
-    position: "fixed",
-    top: "180px",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    width: "90%",
+
+    textAlign: "center",
+    marginBottom: "30px",
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "rgba(85, 111, 154, 0.6)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
@@ -191,8 +157,9 @@ const styles = {
     padding: "20px",
     width: "90%",
     maxWidth: "600px",
+    textAlign: "center",
+    marginBottom: "30px",
   },
-
   content: {
     display: "flex",
     flexDirection: "column",
@@ -215,5 +182,21 @@ const styles = {
     cursor: "pointer",
     transition: "background-color 0.2s",
     marginTop: "10px",
+  },
+  gridContainer: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+    gap: "20px",
+    justifyContent: "center",
+    width: "100%",
+  },
+  gridItem: {
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    textAlign: "center",
+    cursor: "pointer",
   },
 };
