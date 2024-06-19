@@ -7,7 +7,7 @@ export default function login() {
 
   const handleLogin = () => {
     signIn("credentials", {
-      callbackUrl: "/login",
+      callbackUrl: "/",
     });
   };
 

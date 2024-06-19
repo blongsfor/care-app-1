@@ -1,9 +1,7 @@
 import { getSession } from "next-auth/react";
-import LogoutButton from "../components/LogoutButton";
 import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Home() {
   return (
