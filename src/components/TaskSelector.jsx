@@ -26,13 +26,16 @@ export default function TaskSelector() {
 
   return (
     <>
-      <div>
-        <label htmlFor="task">Task</label>
+      <div style={styles.container}>
+        <label htmlFor="task" style={styles.label}>
+          Task:{" "}
+        </label>
         <select
           id="task"
           name="task"
           value={selectedTitle}
           onChange={handleTitleChange}
+          style={styles.select}
         >
           <option value="">Select Task</option>
           {tasks?.map((task) => (
@@ -45,3 +48,25 @@ export default function TaskSelector() {
     </>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "5px",
+  },
+  label: {
+    marginRight: "10px",
+    fontSize: "1em",
+    color: "white",
+    width: "30%",
+    textAlign: "left",
+  },
+  select: {
+    width: "70%",
+    padding: "3px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    textAlign: "center",
+  },
+};

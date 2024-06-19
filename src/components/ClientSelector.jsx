@@ -23,20 +23,23 @@ export default function ClientSelector() {
   };
 
   return (
-    <div>
-      <label htmlFor="client">Client</label>
+    <div style={styles.container}>
+      <label htmlFor="client" style={styles.label}>
+        Client:
+      </label>
       <select
         id="client"
         name="clientID"
         value={selectedClient}
         onChange={handleClientChange}
         required
+        style={styles.select}
       >
         <option value="">Select Client</option>
         {clients?.map((client) => (
           <option key={client._id} value={client._id}>
             {client.firstName} {client.lastName}
-          </option> //maps through clients and returns the name + last name in the selector
+          </option> // maps through clients and returns the name + last name in the selector
         ))}
       </select>
       <input
@@ -47,8 +50,30 @@ export default function ClientSelector() {
             " " +
             clients.find((client) => client._id === selectedClient)?.lastName ||
           ""
-        } //checks if the client you select matches client from DB via id
+        } // checks if the client you select matches client from DB via id
       />
     </div>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "5px",
+  },
+  label: {
+    marginRight: "10px",
+    fontSize: "1em",
+    color: "white",
+    width: "30%",
+    textAlign: "left",
+  },
+  select: {
+    width: "70%",
+    padding: "3px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    textAlign: "center",
+  },
+};

@@ -5,8 +5,16 @@ import Navbar from "../components/Navbar";
 export default function DocumentationFormPage() {
   return (
     <>
-      {/* <Navbar /> */}
+      <h2 style={styles.header}>Create</h2>
       <DocumentationForm />
     </>
   );
 }
+
+const styles = {
+  header: {
+    textAlign: "center",
+    marginTop: "20px",
+    color: "white",
+  },
+};

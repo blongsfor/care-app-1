@@ -28,12 +28,13 @@ export default function Client() {
         alt={`${client.firstName} ${client.lastName}`}
         style={styles.image}
       />
+      <p style={styles.name}>
+        <strong>
+          {client.firstName} {client.lastName}
+        </strong>
+      </p>
       <div style={styles.container}>
         <div style={styles.details}>
-          <p style={styles.name}>
-            <strong>Name:</strong> <br />
-            {client.firstName} {client.lastName}
-          </p>
           <div style={styles.infoBox}>
             <p style={styles.paragraph}>
               <strong>Date of Birth:</strong>
@@ -51,8 +52,8 @@ export default function Client() {
               <strong>Address:</strong>
             </p>
             <div style={styles.infoData}>
-              {client.address.street}, {client.address.city},{" "}
-              {client.address.zipCode}
+              {client.address.street} <br />
+              {client.address.zipCode} {client.address.city}
             </div>
           </div>
           <div style={styles.infoBox}>
@@ -90,7 +91,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: "10vh",
+    marginTop: "3.7vh",
   },
   container: {
     display: "flex",
@@ -98,17 +99,19 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "20px",
-    backdropFilter: "blur(10px)",
-    borderRadius: "8px",
-    maxWidth: "80vw",
+    width: "90%",
     backgroundColor: "rgba(85, 111, 154, 0.6)",
-    marginBottom: "20px",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "all 0.5s ease-in-out",
+    marginTop: "20px",
   },
   image: {
     width: "200px",
     height: "200px",
     objectFit: "cover",
-    borderRadius: "8px",
+    borderRadius: "50%",
     marginBottom: "20px",
     boxShadow:
       "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
@@ -120,7 +123,7 @@ const styles = {
     lineHeight: "1.5",
   },
   name: {
-    marginBottom: "20px",
+    marginBottom: "10px",
     fontSize: "1.5em",
     color: "white",
   },
@@ -128,10 +131,12 @@ const styles = {
     marginBottom: "20px",
   },
   infoData: {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
     padding: "10px",
-    backgroundColor: "#fae095",
+    borderRadius: "8px",
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    marginBottom: "10px",
+    transition: "transform 0.2s",
+    color: "white",
   },
   paragraph: {
     textAlign: "left",
