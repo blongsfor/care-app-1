@@ -124,6 +124,7 @@ const styles = {
   },
   p: {
     marginBottom: "10px",
+    hyphens: "auto",
   },
   buttonContainer: {
     display: "flex",
