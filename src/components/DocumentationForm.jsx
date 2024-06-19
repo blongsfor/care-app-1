@@ -80,10 +80,9 @@ const styles = {
   container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start", // Align items to the left
+    alignItems: "flex-start",
     padding: "20px",
     width: "90%",
-    // maxWidth: "500px",
     backgroundColor: "rgba(85, 111, 154, 0.6)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
