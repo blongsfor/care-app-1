@@ -91,7 +91,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: "10vh",
+    marginTop: "3.7vh",
   },
   container: {
     display: "flex",
