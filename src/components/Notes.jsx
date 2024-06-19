@@ -2,6 +2,89 @@
 
 import React, { useEffect, useState } from "react";
 
+const styles = {
+  container: {
+    width: "90%",
+    // maxWidth: "500px",
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backdropFilter: "blur(14px)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    padding: "20px",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "all 0.5s ease-in-out",
+    marginTop: "20px",
+  },
+  heading: {
+    fontSize: "2em",
+    color: "white",
+    marginBottom: "20px",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginBottom: "20px",
+    width: "290px",
+  },
+  input: {
+    padding: "10px",
+    fontSize: "1em",
+    borderRadius: "4px",
+    border: "1px solid #bdc3c7",
+    marginBottom: "10px",
+    width: "100%",
+    boxSizing: "border-box",
+  },
+  button: {
+    padding: "10px 20px",
+    fontSize: "1em",
+    borderRadius: "4px",
+    border: "none",
+    backgroundColor: "#556f9a",
+    marginTop: "10px",
+    color: "#fff",
+    cursor: "pointer",
+    transition: "background-color 0.2s",
+  },
+  ul: {
+    listStyle: "none",
+    padding: 0,
+  },
+  li: {
+    display: "flex",
+    alignItems: "center",
+    padding: "10px",
+    borderRadius: "8px",
+    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    marginBottom: "10px",
+    transition: "transform 0.2s",
+    color: "white",
+  },
+  checkbox: {
+    marginRight: "10px",
+  },
+  deleteButton: {
+    padding: "10px",
+    fontSize: "1em",
+    borderRadius: "4px",
+    border: "none",
+    backgroundColor: "darkorange",
+    color: "#fff",
+    cursor: "pointer",
+    transition: "background-color 0.2s",
+    marginTop: "20px",
+  },
+
+  task: {
+    flex: "1",
+    marginLeft: "5px",
+  },
+};
+
 export default function Notes() {
   const [notes, setNotes] = useState([]); //array of objects, deshalb empty
   const [newNote, setNewNote] = useState("");
@@ -68,36 +151,40 @@ export default function Notes() {
   };
 
   return (
-    <div>
-      <h2>Your To-Do</h2>
-      <form onSubmit={addNote}>
+    <div style={styles.container}>
+      <form onSubmit={addNote} style={styles.form}>
         <input
           type="text"
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
-          placeholder="Enter your to-do"
+          placeholder="add your new task here..."
           required
+          style={styles.input}
         />
-        <button type="submit">Add Item</button>
+        <button type="submit" style={styles.button}>
+          Add Task
+        </button>
       </form>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <ul style={styles.ul}>
           {notes.length > 0 ? (
             notes.map((note) => (
               <li
                 key={note._id}
                 style={{
-                  textDecoration: note.completed ? "line-through" : "none", //cross note if it is completed
+                  ...styles.li,
+                  textDecoration: note.completed ? "line-through" : "none",
                 }}
               >
                 <input
                   type="checkbox"
                   checked={note.completed}
                   onChange={() => toggleCompletion(note._id, !note.completed)}
+                  style={styles.checkbox}
                 />
-                {note.task}
+                <div style={styles.task}>{note.task}</div>
               </li>
             ))
           ) : (
@@ -105,7 +192,9 @@ export default function Notes() {
           )}
         </ul>
       )}
-      <button onClick={deleteCompletedNotes}>Delete Completed Items</button>
+      <button onClick={deleteCompletedNotes} style={styles.deleteButton}>
+        Delete Completed Tasks
+      </button>
     </div>
   );
 }
