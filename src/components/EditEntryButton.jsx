@@ -76,6 +76,7 @@ const EditEntryButton = ({ clientID, docIndex, doc, onUpdate }) => {
             value={formData.details}
             onChange={handleInputChange}
             style={styles.textarea}
+            rows={7}
           />
           <button type="submit" style={styles.button}>
             Save
@@ -103,6 +104,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "flex-start",
     marginTop: "10px",
+    width: "100%",
   },
   input: {
     padding: "8px",
@@ -120,7 +122,6 @@ const styles = {
     border: "1px solid #ccc",
     fontSize: "1em",
     width: "100%",
-    minHeight: "100px",
     boxSizing: "border-box",
   },
   button: {
