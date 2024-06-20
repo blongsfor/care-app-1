@@ -24,5 +24,8 @@ a {
 }
 
 body {
-  background: radial-gradient(circle, #3c5481, #44507d);
+  /* background: radial-gradient(circle, #98a36d, #f0f4d6); */
+  /* background: radial-gradient(circle, #dbddde, #7e8d99); */
+  background: radial-gradient(circle, #8dc7e4, #67a0ec, #8dc7e4);
+  /* background: radial-gradient(circle, #59e0b7, #67dce4, #59e0b7, #39649d); */
 }

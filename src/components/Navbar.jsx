@@ -33,7 +33,7 @@ export default function Navbar() {
     left: 0,
     width: isOpen ? "47%" : "0",
     height: "100%",
-    backgroundColor: "rgba(85, 111, 154, 0.6)", // Semi-transparent background color
+    backgroundColor: "rgba(70, 130, 180, 0.3)", // Semi-transparent background color
     backdropFilter: "blur(12px)", // Blurring effect
     display: "flex",
     flexDirection: "column",

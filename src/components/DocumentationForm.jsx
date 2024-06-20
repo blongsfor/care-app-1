@@ -83,7 +83,7 @@ const styles = {
     alignItems: "flex-start",
     padding: "20px",
     width: "90%",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backgroundColor: "rgba(70, 130, 180, 0.6)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",

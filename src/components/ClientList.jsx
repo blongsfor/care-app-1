@@ -38,7 +38,7 @@ const styles = {
     margin: "20px",
     padding: "10px",
     borderRadius: "8px",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backgroundColor: "rgba(70, 130, 180, 0.6)",
     transition: "transform 0.2s",
   },
   linkContainer: {
