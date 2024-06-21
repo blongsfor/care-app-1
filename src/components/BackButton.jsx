@@ -10,8 +10,19 @@ export default function BackButton() {
   };
 
   return (
-    <button onClick={handleBack}>
+    <button onClick={handleBack} style={backButtonStyle}>
       <ChevronLeft />
     </button>
   );
 }
+
+const backButtonStyle = {
+  color: "white",
+  position: "fixed",
+  background: "none",
+  border: "none",
+  cursor: "pointer",
+  zIndex: "1000",
+  top: "20px",
+  right: "20px",
+};

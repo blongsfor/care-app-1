@@ -2,6 +2,8 @@ import { SessionProvider, useSession } from "next-auth/react";
 import { SWRConfig } from "swr";
 import "../styles/globals.css";
 import Navbar from "@/components/Navbar";
+import BackButton from "@/components/BackButton";
+import Header from "@/components/Header";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -23,7 +25,7 @@ function AppContent({ Component, pageProps }) {
 
   return (
     <>
-      <header>{isLoggedIn && <Navbar />}</header>
+      <header>{isLoggedIn && <Header />}</header>
       <Component {...pageProps} />
     </>
   );

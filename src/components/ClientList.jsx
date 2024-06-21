@@ -60,5 +60,7 @@ const styles = {
     fontSize: "1.2em",
     color: "#fff",
     textDecoration: "none",
+
+    borderRadius: "8px",
   },
 };
