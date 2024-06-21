@@ -12,8 +12,8 @@ export default function Homepage() {
   console.log("data", data);
 
   return (
-    <div>
-      <h2 style={styles.header}>Your Clients</h2>
+    <div style={styles.div}>
+      <h2 style={styles.header}></h2>
       <ClientList clients={data} />
     </div>
   );
@@ -24,5 +24,8 @@ const styles = {
     textAlign: "center",
     marginTop: "20px",
     color: "white",
+  },
+  div: {
+    marginTop: "60px",
   },
 };

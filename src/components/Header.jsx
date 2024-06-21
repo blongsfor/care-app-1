@@ -9,7 +9,7 @@ export default function Header() {
   const getPageTitle = () => {
     switch (router.pathname) {
       case "/":
-        return "Home";
+        return "TakeCare";
       case "/notes":
         return "Tasks";
       case "/clientlist":
@@ -21,7 +21,7 @@ export default function Header() {
       case "/login":
         return "Login";
       default:
-        return "Page Title";
+        return "Client Profile";
     }
   };
 
@@ -37,13 +37,17 @@ const headerStyle = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  backgroundColor: "blue",
+  backgroundColor: "rgba(85, 111, 154, 0.6)",
+  //   backdropFilter: "blur(10px)",
   position: "fixed",
   top: 0,
   left: 0,
   right: 0,
-  padding: "20px",
-  zIndex: 1000,
+  padding: "15px",
+  zIndex: "1000",
+  borderBottomRightRadius: "20px",
+  borderBottomLeftRadius: "20px",
+  //   minHeight: "60px",
 };
 
 const h2Style = {

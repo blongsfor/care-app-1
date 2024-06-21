@@ -6,7 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 export default function Home() {
   return (
     <>
-      <h2 style={styles.header}>TakeCare</h2>
+      <h2 style={styles.header}></h2>
       <Dashboard />
     </>
   );
@@ -121,7 +121,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "20px",
+    marginTop: "80px",
   },
   header: {
     textAlign: "center",
