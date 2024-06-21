@@ -45,7 +45,7 @@ const styles = {
     fontSize: "0.8em",
     borderRadius: "4px",
     border: "none",
-    backgroundColor: "#f04b3f",
+    backgroundColor: "rgba(255, 116, 119, 0.9)",
     color: "#fff",
     cursor: "pointer",
     transition: "background-color 0.2s",

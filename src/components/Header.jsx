@@ -37,7 +37,7 @@ const headerStyle = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  backgroundColor: "rgba(85, 111, 154, 0.6)",
+  backgroundColor: "rgba(85, 111, 154, 0.8)",
   //   backdropFilter: "blur(10px)",
   position: "fixed",
   top: 0,
