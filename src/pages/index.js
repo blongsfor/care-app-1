@@ -46,7 +46,10 @@ const Dashboard = () => {
       </div>
 
       <div style={styles.gridContainer}>
-        <div style={styles.gridItem} onClick={() => handleNavigation("/notes")}>
+        <div
+          style={styles.gridItemTask}
+          onClick={() => handleNavigation("/notes")}
+        >
           <Image
             src="/square-check-big.svg"
             alt="To-Do list icon"
@@ -57,7 +60,7 @@ const Dashboard = () => {
         </div>
 
         <div
-          style={styles.gridItem}
+          style={styles.gridItemClients}
           onClick={() => handleNavigation("/clientlist")}
         >
           <Image
@@ -70,7 +73,7 @@ const Dashboard = () => {
         </div>
 
         <div
-          style={styles.gridItem}
+          style={styles.gridItemDocumentation}
           onClick={() => handleNavigation("/entries")}
         >
           <Image
@@ -83,7 +86,7 @@ const Dashboard = () => {
         </div>
 
         <div
-          style={styles.gridItem}
+          style={styles.gridItemCreate}
           onClick={() => handleNavigation("/documentation-form")}
         >
           <Image
@@ -133,13 +136,13 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backgroundColor: "rgba(135, 206, 235, 0.0)",
+    // backgroundColor: "rgba(85, 111, 154, 0.6)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     padding: "20px",
     width: "90%",
-
     textAlign: "center",
     marginBottom: "30px",
   },
@@ -175,7 +178,7 @@ const styles = {
     fontSize: "1em",
     borderRadius: "4px",
     border: "none",
-    backgroundColor: "#556f9a",
+    backgroundColor: "rgba(255, 116, 119, 0.9)",
     color: "#fff",
     cursor: "pointer",
     transition: "background-color 0.2s",
@@ -188,8 +191,38 @@ const styles = {
     justifyContent: "center",
     width: "100%",
   },
-  gridItem: {
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
+  gridItemTask: {
+    backgroundColor: "rgb(203, 195, 290, 0.8)",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    textAlign: "center",
+    cursor: "pointer",
+  },
+
+  gridItemDocumentation: {
+    backgroundColor: "rgba(247, 220, 111, 0.9)",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    textAlign: "center",
+    cursor: "pointer",
+  },
+
+  gridItemClients: {
+    backgroundColor: "rgba(255, 180, 85, 0.9)",
+    backdropFilter: "blur(14px)",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    textAlign: "center",
+    cursor: "pointer",
+  },
+
+  gridItemCreate: {
+    backgroundColor: "rgba(152, 255, 152, 0.5)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",

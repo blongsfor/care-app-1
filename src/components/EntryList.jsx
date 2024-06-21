@@ -50,6 +50,7 @@ export default function EntryList({ entries, onUpdate, onDelete }) {
                               docIndex={index}
                               doc={doc}
                               onUpdate={onUpdate}
+                              style={styles.editButton}
                             />
                           </div>
                           <div style={styles.deleteButtonContainer}>
@@ -96,17 +97,17 @@ const styles = {
   li: {
     padding: "10px",
     borderRadius: "8px",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backgroundColor: "rgba(70, 130, 180, 0.6)",
     marginBottom: "10px",
     transition: "transform 0.2s",
     color: "white",
     listStyle: "none",
   },
   li1: {
-    position: "relative", // Ensure relative positioning for absolute children
+    position: "relative",
     padding: "10px",
     borderRadius: "8px",
-    backgroundColor: "rgba(85, 111, 154, 0.6)",
+    backgroundColor: "rgba(70, 130, 180, 0.6)",
     marginBottom: "10px",
     transition: "transform 0.2s",
     color: "white",
@@ -135,6 +136,9 @@ const styles = {
     flex: 1,
     display: "flex",
     justifyContent: "center",
+  },
+  editButton: {
+    backgroundColor: "rgba(70, 130, 180, 0.8)",
   },
   deleteButtonContainer: {
     alignSelf: "center",
