@@ -192,7 +192,7 @@ const styles = {
     width: "100%",
   },
   gridItemTask: {
-    backgroundColor: "rgba(44, 62, 80, 0.5)",
+    backgroundColor: "rgb(203, 195, 290, 0.8)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
