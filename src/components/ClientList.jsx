@@ -29,12 +29,13 @@ export default function ClientList({ clients }) {
 const styles = {
   list: {
     listStyle: "none",
-    padding: "0 20px",
+    padding: "10px 20px",
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: "20px",
     justifyContent: "center",
-    marginTop: "20px",
+    marginTop: "10px",
+    marginBottom: "10px",
     maxWidth: "100%",
   },
   listItem: {

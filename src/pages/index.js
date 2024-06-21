@@ -136,7 +136,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(135, 206, 235, 0.1)",
+    backgroundColor: "rgba(135, 206, 235, 0.0)",
     // backgroundColor: "rgba(85, 111, 154, 0.6)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",

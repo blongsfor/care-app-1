@@ -27,8 +27,6 @@ body {
   /* background: radial-gradient(circle, #98a36d, #f0f4d6); */
   /* background: radial-gradient(circle, #dbddde, #7e8d99); */
   background: radial-gradient(#8ec5e0, #6098e2, #8ec5e0);
-  margin: 0;
-  height: 100vh;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
