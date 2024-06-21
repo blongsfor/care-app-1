@@ -136,14 +136,13 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(135, 206, 235, 0.3)",
+    backgroundColor: "rgba(135, 206, 235, 0.1)",
     // backgroundColor: "rgba(85, 111, 154, 0.6)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     padding: "20px",
     width: "90%",
-
     textAlign: "center",
     marginBottom: "30px",
   },
@@ -213,7 +212,7 @@ const styles = {
   },
 
   gridItemClients: {
-    backgroundColor: "rgba(250, 128, 114, 0.9)",
+    backgroundColor: "rgba(255, 180, 85, 0.9)",
     backdropFilter: "blur(14px)",
     borderRadius: "15px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
