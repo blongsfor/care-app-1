@@ -11,7 +11,7 @@ export default function Entries() {
   return (
     <>
       <div>
-        <h2 style={styles.header}>Documentation</h2>
+        <h2 style={styles.header}></h2>
         <EntryList entries={data} onUpdate={mutate} onDelete={mutate} />
       </div>
     </>

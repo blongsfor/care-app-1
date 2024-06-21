@@ -86,7 +86,7 @@ const styles = {
     justifyContent: "flex-start",
     padding: "20px",
     transition: "all 0.5s ease-in-out",
-    marginTop: "10px",
+    marginTop: "60px",
   },
   ul: {
     listStyle: "none",

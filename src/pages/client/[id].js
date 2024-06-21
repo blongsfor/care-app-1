@@ -16,8 +16,13 @@ export default function ClientDetails() {
 
   return (
     <>
-      <Navbar />
-      <Client {...data} />
+      <div style={styles}>
+        <Client {...data} />
+      </div>
     </>
   );
 }
+
+const styles = {
+  marginTop: "80px",
+};
