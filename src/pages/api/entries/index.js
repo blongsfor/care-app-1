@@ -6,45 +6,31 @@ export default async function handler(req, res) {
 
   console.log("request method:", req.method);
 
-  if (req.method === "GET") {
-    try {
-      const entries = await Entry.find().lean();
+  try {
+    switch (req.method) {
+      case "GET":
+        const entries = await Entry.find().lean();
+        return res.status(200).json(entries);
 
-      res.status(200).json(entries);
-    } catch (error) {
-      console.error("Error fetching entries:", error);
-      res.status(500).json({ error: "Failed to fetch entries" });
+      case "POST":
+        const { client, documentation, clientID } = req.body;
+        let entry = await Entry.findOneAndUpdate(
+          { clientID },
+          { $push: { documentation } },
+          { upsert: true, new: true }
+        );
+        return res.status(200).json({ status: "Entry saved successfully" });
+
+      case "PUT":
+        const { id, ...updateData } = req.body;
+        await Entry.findByIdAndUpdate(id, { $set: updateData });
+        return res.status(200).json({ status: `Entry ${id} updated!` });
+
+      default:
+        return res.status(405).json({ error: "Method not allowed" });
     }
-  }
-  if (req.method === "POST") {
-    try {
-      const { client, documentation, clientID } = req.body;
-
-      let entry = await Entry.findOne({ clientID });
-
-      if (entry) {
-        // look for existing entry before creating
-        entry.documentation.push(documentation);
-        await entry.save();
-      } else {
-        // if not existing create a new one
-        entry = new Entry({ clientID, client, documentation: [documentation] });
-        await entry.save();
-      }
-
-      res.status(200).json({ status: "Entry saved successfully" });
-    } catch (error) {
-      console.error("Error creating/updating entry:", error);
-      res.status(500).json({ error: "Failed to create/update entry" });
-    }
-    if (request.method === "PUT") {
-      await Entry.findByIdAndUpdate(id, {
-        $set: request.body,
-      });
-
-      response.status(200).json({ status: `Entry ${id} updated!` });
-    }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
+  } catch (error) {
+    console.error("Error:", error);
+    return res.status(500).json({ error: "Server error" });
   }
 }
