@@ -10,8 +10,7 @@ export default async function handler(req, res) {
     switch (req.method) {
       case "GET":
         const entries = await Entry.find().lean();
-        res.status(200).json(entries);
-        break;
+        return res.status(200).json(entries);
 
       case "POST":
         const { client, documentation, clientID } = req.body;
@@ -20,21 +19,18 @@ export default async function handler(req, res) {
           { $push: { documentation } },
           { upsert: true, new: true }
         );
-        res.status(200).json({ status: "Entry saved successfully" });
-        break;
+        return res.status(200).json({ status: "Entry saved successfully" });
 
       case "PUT":
         const { id, ...updateData } = req.body;
         await Entry.findByIdAndUpdate(id, { $set: updateData });
-        res.status(200).json({ status: `Entry ${id} updated!` });
-        break;
+        return res.status(200).json({ status: `Entry ${id} updated!` });
 
       default:
-        res.status(405).json({ error: "Method not allowed" });
-        break;
+        return res.status(405).json({ error: "Method not allowed" });
     }
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({ error: "Server error" });
+    return res.status(500).json({ error: "Server error" });
   }
 }
